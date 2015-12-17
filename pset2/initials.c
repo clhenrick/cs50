@@ -17,7 +17,7 @@ void checkCaps(char c);
 
 int main(void)
 {
-    printf("Tell me your name please! ");
+    // printf("Tell me your name please! ");
     string s = GetString();
     parseString(s);
 }
