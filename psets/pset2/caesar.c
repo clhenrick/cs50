@@ -13,6 +13,8 @@ void parseInput(string s);
 char mapChar(char c, int offset);
 int printEncipherText(void);
 
+// check for a single cmd line argument which should be a positive integer
+// else return 1 and prompt the user on how to run the program
 int main(int argc, string argv[])
 {
   if (argc == 2)
@@ -36,6 +38,7 @@ int main(int argc, string argv[])
   }
 }
 
+// error message to display in case user runs program incorrectly
 void errorMsgArgv(void)
 {
     printf("Error: run this program by passing it a single positive integer. \n For example: ./caesar 3 \n");
@@ -50,16 +53,18 @@ void getUserInput(void)
     // check to make sure user entered a string of text
     if (strlen(s) > 0)
     {
+      // parse the string
       parseInput(s);
     }
     else
     {
+      // prompt user again for text to scramble
       getUserInput();
     }
 }
 
 // parse the user's input, checking for alpha chars, then checking for upper or lowercase chars
-// if not an alpha pass it to our enciphered array
+// if not an alpha pass it to our enciphered array as is
 void parseInput(string s)
 {
     for (int i = 0, len = strlen(s); i < len; i++)
@@ -100,6 +105,7 @@ char mapChar(char c, int offset)
     return cmod;
 }
 
+// print the encrypted message to the user
 int printEncipherText()
 {
     printf("%s\n", enciphered);
