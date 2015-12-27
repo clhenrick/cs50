@@ -41,10 +41,38 @@ bool search(int value, int values[], int n)
 }
 
 /**
- * Sorts array of n values.
+ * Sorts array of n values using the "selection sort",
+ *  an O(n^2) sorting algorithm
  */
 void sort(int values[], int n)
 {
-    // TODO: implement an O(n^2) sorting algorithm
+    
+    int* min = malloc(sizeof(int));
+
+    for (int i = 0; i < n - 1; i ++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (values[i] > values[j])
+            {
+                // if the next value is bigger than the previous,
+                // swap the values
+                *min = values[j];
+                values[j] = values[i];
+                values[i] = *min;
+                printf("swapped: %i\n", values[i]);
+                // recursively iterate over values again
+                sort(values, n);
+            }
+        }
+    }
+
+    /* Double check to make sure our array is sorted correctly */
+    // for (int i=0; i<n; i++)
+    // {
+    //     printf("%i\n", values[i] );
+    // }
+
     return;
+    
 }
