@@ -13,48 +13,30 @@
 
 /**
  * Implements a "binary search" algorithm
- * requires values to be sorted before searching 
+ * Note: requires values to be sorted (smallest to largest) before searching 
  * Returns true if value is in array of n values, else false.
  */
 bool search(int value, int values[], int n)
 {
-    printf("n value: %i\n", n);
     
     if (n <= 0)
     {
-        return 1;
+        return false;
     }
-
-    // while length of list > 0
-      // look at middle of list
-      // if number is found, return true
-      // else if number is higher search left
-      // else if number is lower search right
-      // call self
-    // return false
 
     int* p; 
     int* q = malloc(sizeof(int));
 
     if (q == NULL)
     {
-        return 1;
+        return false;
     }
 
     p = values;
     *q = value;
 
-    /* view the contents of our array */
-    // printf("searching values: \n");
-    // for (int i = 0; i < n; i++)
-    // {
-    //     printf("%i\n", values[i]);
-    // }
-
     // current value to search against
     int cur = *(p + (n/2));
-
-    // printf("current value to search against: %i\n", cur);
     
     if (n > 0)
     {
@@ -64,6 +46,7 @@ bool search(int value, int values[], int n)
         }
         else if (cur != *q && n == 1)
         {
+            // in case *q is larger than the last item in p
             return false;
         }
         else if (cur > *q)
@@ -74,10 +57,8 @@ bool search(int value, int values[], int n)
         else if (cur < *q)
         {
             // reassign values to exclude bottom half
+            // & adjust n accordingly
             int new_start = (n/2);
-            
-            printf("new start: %i\n", new_start);
-
             values = values + (new_start);
             int new_n = n - (n/2);
             return search(value, values, new_n);
@@ -108,19 +89,11 @@ void sort(int values[], int n)
                 *min = values[j];
                 values[j] = values[i];
                 values[i] = *min;
-                printf("swapped: %i\n", values[i]);
                 // recursively iterate over values again
                 sort(values, n);
             }
         }
     }
-
-    /* Double check to make sure our array is sorted correctly */
-    for (int i=0; i<n; i++)
-    {
-        printf("%i\n", values[i] );
-    }
-    printf("\n");
 
     return;
     
