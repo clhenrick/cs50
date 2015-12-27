@@ -12,9 +12,9 @@
 #include "helpers.h"
 
 /**
- * Implements a "binary search" algorithm
+ * Implements a "binary search" algorithm, recursively
  * Note: requires values to be sorted (smallest to largest) before searching 
- * Returns true if value is in array of n values, else false.
+ * Returns true if value is in array of n values, else returns false.
  */
 bool search(int value, int values[], int n)
 {
