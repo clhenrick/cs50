@@ -55,7 +55,7 @@ int main(int argc, string argv[])
     sort(haystack, size);
 
     // try to find needle in haystack
-    if (search(&needle, haystack, size))
+    if (search(needle, haystack, size))
     {
         printf("\nFound needle in haystack!\n\n");
         return 0;
