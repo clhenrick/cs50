@@ -1,19 +1,41 @@
-0.  TODO
-1.  TODO
-2.  TODO
-3.  TODO
+0.  JPG:  ~16 million
+
+1.  GIF
+
+2.  Lossy compression means data is lossed while lossless compression means no data is lossed.
+
+3.  JPG is lossy.
+
 4.  TODO
-5.  TODO
-6.  TODO
-7.  TODO
-8.  TODO
-9.  TODO
-10. TODO
-11. TODO
-12. TODO
-13. TODO
-14. TODO
-15. TODO
-16. TODO
-17. TODO
+
+5.  Physically destroy the harddrive or overwrite the drive's data.
+
+6.  A header file for describing integer data types.
+
+7.  These are for integer data types that are various widths, signed and unsigned,
+which allow for storing different size integers. As a result you know exactly how
+many bits an integer data type can store. int8_t for example will store exactly
+8 bits.
+
+8.  1, 2, 4, 4
+
+9. BM
+
+10. bfsize is the size in bytes of the bitmap and bisize is the size in bytes 
+required by the BITMAPINFOHEADER structure
+
+11. It means the bitmap is oriented top-down and starts at the upper-left corner.
+
+12. The biBitCount field
+
+13. If memory wasn't available to store the file's contents.
+
+14. Because we only want to read in each struct once, not multiple times.
+
+15. 3
+
+16. Sets the file position / changes the offset of the file pointer.
+
+17. The current position of the file pointer
+
 18. TODO
